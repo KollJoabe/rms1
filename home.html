@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Management System</title>
+  <!-- Include Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Include Lucide Library -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-gray-100">
+  <div id="app" class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 p-4">
+      <div class="flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Rental Management System</h1>
+        <div class="flex space-x-4">
+          <svg data-lucide="settings" class="w-6 h-6 text-gray-500"></svg>
+          <svg data-lucide="bell" class="w-6 h-6 text-gray-500"></svg>
+          <svg data-lucide="user" class="w-6 h-6 text-gray-500"></svg>
+        </div>
+      </div>
+    </header>
+
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-blue-600 text-white min-h-screen">
+        <nav class="p-4 space-y-2">
+          <div class="flex items-center space-x-3 p-2 bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="home" class="w-5 h-5"></svg>
+            <span>Dashboard</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="file-text" class="w-5 h-5"></svg>
+            <span>Property Management</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="users" class="w-5 h-5"></svg>
+            <span>Occupants Management</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="tool" class="w-5 h-5"></svg>
+            <span>Maintenance & Repairs</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="dollar-sign" class="w-5 h-5"></svg>
+            <span>Financial Management</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="file" class="w-5 h-5"></svg>
+            <span>Compliance & Legal</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="user-check" class="w-5 h-5"></svg>
+            <span>User Administration</span>
+          </div>
+          <div class="flex items-center space-x-3 p-2 hover:bg-blue-700 rounded cursor-pointer">
+            <svg data-lucide="bar-chart" class="w-5 h-5"></svg>
+            <span>Reporting & Analytics</span>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6">
+        <div class="mb-6">
+          <!-- Search and Filter -->
+          <div class="flex space-x-4 mb-4">
+            <div class="flex-1">
+              <input type="text" placeholder="Search property" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="w-48">
+              <select class="w-full p-2 border border-gray-300 rounded">
+                <option value="">Select City</option>
+                <option value="dubai">Dubai</option>
+                <option value="abu-dhabi">Abu Dhabi</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-sm text-gray-600">Occupancy Rate</div>
+              <div class="text-2xl font-bold text-emerald-500 mt-2">85%</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-sm text-gray-600">Lease Expirations</div>
+              <div class="text-2xl font-bold text-red-500 mt-2">12</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-sm text-gray-600">Overdue Rent</div>
+              <div class="text-2xl font-bold text-orange-500 mt-2">$5,000</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow">
+              <div class="text-sm text-gray-600">Maintenance Requests</div>
+              <div class="text-2xl font-bold text-blue-500 mt-2">5</div>
+            </div>
+          </div>
+
+          <!-- Property List -->
+          <div class="bg-white rounded-lg shadow">
+            <div class="p-4 border-b border-gray-200">
+              <h2 class="text-lg font-semibold">Properties</h2>
+            </div>
+            <div class="p-4">
+              <table class="w-full">
+                <thead>
+                  <tr class="text-left text-gray-600">
+                    <th class="p-2">Name</th>
+                    <th class="p-2">Location</th>
+                    <th class="p-2">Type</th>
+                    <th class="p-2">Status</th>
+                    <th class="p-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-t border-gray-100">
+                    <td class="p-2">Villa A</td>
+                    <td class="p-2">Dubai</td>
+                    <td class="p-2">Residential</td>
+                    <td class="p-2">Occupied</td>
+                    <td class="p-2">
+                      <div class="flex space-x-2">
+                        <button class="px-3 py-1 bg-blue-500 text-white rounded text-sm">View</button>
+                        <button class="px-3 py-1 bg-gray-500 text-white rounded text-sm">Edit</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr class="border-t border-gray-100">
+                    <td class="p-2">Apartment B</td>
+                    <td class="p-2">Abu Dhabi</td>
+                    <td class="p-2">Commercial</td>
+                    <td class="p-2">Vacant</td>
+                    <td class="p-2">
+                      <div class="flex space-x-2">
+                        <button class="px-3 py-1 bg-blue-500 text-white rounded text-sm">View</button>
+                        <button class="px-3 py-1 bg-gray-500 text-white rounded text-sm">Edit</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script>
+    // Initialize Lucide Icons after the page is loaded
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
